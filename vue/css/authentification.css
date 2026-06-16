@@ -1,0 +1,286 @@
+/*   AUTHENTIFICATION    */
+/* (connexion + compte) */
+
+/* MENU BURGER */
+#menu-toggle {
+    display: none; /* cache la case du menu */
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column; /* met les lignes en colonne */
+    gap: 5px; /* espace entre les lignes */
+    cursor: pointer; /* affiche la main */
+}
+
+.hamburger span {
+    width: 25px; /* largeur des lignes */
+    height: 3px; /* hauteur des lignes */
+    background: #2d6a4f; /* couleur verte */
+    border-radius: 3px; /* bords arrondis */
+}
+
+/* CONTENU DE LA PAGE */
+.page-connexion,
+.page-inscription {
+    min-height: 100vh; /* prend toute la hauteur */
+    display: flex;
+    align-items: center; /* centre verticalement */
+    justify-content: center; /* centre horizontalement */
+    padding: 100px 20px 50px; /* espace intérieur */
+}
+
+/* CARTE PRINCIPALE */
+.carte {
+    max-width: 480px; /* largeur maximale */
+    width: 100%; /* prend toute la place disponible */
+    background: rgba(255, 255, 255, 0.4); /* fond transparent */
+    backdrop-filter: blur(16px); /* effet flou */
+    border-radius: 32px; /* coins arrondis */
+    padding: 25px 18px; /* espace intérieur */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* bordure légère */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1); /* ombre */
+}
+
+/* LOGO */
+.logo-carte {
+    text-align: center; /* centre le contenu */
+    margin-bottom: 30px; /* espace en bas */
+}
+
+.logo-carte img {
+    width: 200px; /* taille du logo */
+    border-radius: 50%; /* image ronde */
+    margin-bottom: 15px; /* espace sous l’image */
+    border: 3px solid white; /* contour blanc */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* ombre légère */
+}
+
+.logo-carte h1 {
+    font-family: "Cormorant Garamond", serif; /* police du titre */
+    font-size: 28px; /* taille du texte */
+    color: #1b4332; /* couleur foncée */
+}
+
+.logo-carte h1 span {
+    color: #2d6a4f; /* couleur verte */
+    font-style: italic; /* texte en italique */
+}
+
+.logo-carte p {
+    color: #2d6a4f; /* couleur verte */
+    font-size: 14px; /* taille du texte */
+    margin-top: 8px; /* espace au-dessus */
+}
+
+/* CARTE INFO */
+.carte-info {
+    padding: 20px 25px; /* espace intérieur */
+    border-radius: 15px; /* coins arrondis */
+    background: rgba(76, 175, 80, 0.25); /* fond vert transparent */
+    backdrop-filter: blur(12px); /* effet flou */
+    -webkit-backdrop-filter: blur(12px); /* compatibilité Safari */
+    border: 1px solid rgba(76, 175, 80, 0.4); /* bordure verte */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* ombre */
+    color: #1b5e20; /* couleur du texte */
+    width: 300px; /* largeur fixe */
+    margin: 20px auto; /* centre la carte */
+}
+
+.carte-info p {
+    margin: 10px 0; /* espace entre paragraphes */
+}
+
+/* FORMULAIRE */
+.champ {
+    margin-bottom: 18px; /* espace entre champs */
+}
+
+.champ label {
+    display: block; /* passe à la ligne */
+    font-size: 12px; /* petite taille */
+    font-weight: 600; /* texte plus épais */
+    color: #1b4332; /* couleur foncée */
+    margin-bottom: 6px; /* espace sous le label */
+    text-transform: uppercase; /* texte en majuscule */
+    letter-spacing: 0.5px; /* espace entre lettres */
+}
+
+.champ input {
+    width: 100%; /* prend toute la largeur */
+    padding: 12px 16px; /* espace intérieur */
+    border-radius: 40px; /* coins très arrondis */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* bordure claire */
+    background: rgba(255, 255, 255, 0.7); /* fond clair */
+    font-family: "DM Sans", sans-serif; /* police */
+    font-size: 14px; /* taille du texte */
+    outline: none; /* enlève le contour bleu */
+    transition: 0.2s; /* animation douce */
+}
+
+.champ input:focus {
+    border-color: #2d6a4f; /* bordure verte au clic */
+    background: white; /* fond blanc */
+}
+
+/* OPTIONS (connexion seulement) */
+.options {
+    display: flex;
+    flex-direction: column; /* éléments en colonne */
+    gap: 12px; /* espace entre éléments */
+    align-items: flex-start; /* alignement à gauche */
+    margin-bottom: 25px; /* espace en bas */
+    font-size: 13px; /* taille du texte */
+}
+
+.souvenir-moi {
+    display: flex;
+    align-items: center; /* centre verticalement */
+    gap: 8px; /* espace */
+    color: #1b4332; /* couleur du texte */
+    cursor: pointer; /* curseur main */
+}
+
+.souvenir-moi input {
+    width: 18px; /* taille de la case */
+    height: 18px;
+    cursor: pointer;
+    accent-color: #2d6a4f; /* couleur verte */
+}
+
+.mot-passe-oublie {
+    color: #2d6a4f; /* couleur verte */
+    text-decoration: none; /* enlève le soulignement */
+    font-weight: 500;
+}
+
+.mot-passe-oublie:hover {
+    color: #1b4332; /* couleur plus foncée */
+    text-decoration: underline; /* souligne au survol */
+}
+
+/* BOUTON */
+.btn-envoyer {
+    width: 100%; /* pleine largeur */
+    padding: 14px; /* espace intérieur */
+    background: #2d6a4f; /* fond vert */
+    color: white; /* texte blanc */
+    border: none; /* pas de bordure */
+    border-radius: 40px; /* coins arrondis */
+    font-weight: 600; /* texte épais */
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s; /* animation */
+    margin-top: 10px; /* espace au-dessus */
+}
+
+.btn-envoyer:hover {
+    background: #1b4332; /* vert foncé */
+    transform: translateY(-2px); /* monte légèrement */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* ombre */
+}
+
+/* LIENS */
+.lien-sinscrire,
+.lien-seconnecter {
+    text-align: center; /* texte centré */
+    margin-top: 20px; /* espace au-dessus */
+    font-size: 14px;
+    color: #1b4332;
+}
+
+.lien-sinscrire a,
+.lien-seconnecter a {
+    color: #2d6a4f; /* vert */
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.lien-sinscrire a:hover,
+.lien-seconnecter a:hover {
+    text-decoration: underline; /* souligne au survol */
+}
+
+.retour {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.retour a {
+    color: #1b4332;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.retour a:hover {
+    color: #2d6a4f;
+}
+
+/* EFFETS FLOTTANTS */
+.flottant {
+    position: fixed; /* reste fixe */
+    border-radius: 50%; /* forme ronde */
+    filter: blur(60px); /* effet flou */
+    pointer-events: none; /* ignore les clics */
+    z-index: 0; /* derrière le contenu */
+}
+
+.flottant-1 {
+    width: 300px;
+    height: 300px;
+    background: rgba(45, 106, 79, 0.2);
+    top: -100px;
+    right: -80px;
+}
+
+.flottant-2 {
+    width: 250px;
+    height: 250px;
+    background: rgba(69, 148, 96, 0.2);
+    bottom: -50px;
+    left: -60px;
+}
+
+/*   TABLETTE 481px      */
+
+@media (min-width: 481px) {
+    .carte {
+        padding: 30px 25px; /* plus d’espace */
+    }
+
+    .logo-carte h1 {
+        font-size: 30px; /* texte plus grand */
+    }
+
+    .options {
+        flex-direction: row; /* met en ligne */
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+/*   TABLETTE 768px      */
+
+@media (min-width: 768px) {
+    .hamburger {
+        display: none; /* cache le menu burger */
+    }
+
+    .nav-links,
+    .nav-buttons {
+        display: flex; /* affiche les liens */
+    }
+
+    .carte {
+        padding: 30px 20px;
+    }
+}
+
+/*   ORDINATEUR 1024px   */
+
+@media (min-width: 1024px) {
+    .carte {
+        max-width: 520px; /* carte plus large */
+        padding: 40px 35px; /* plus d’espace intérieur */
+    }
+}

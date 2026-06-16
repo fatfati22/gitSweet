@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" contenu="width=device-width, initial-scale=1.0" />
+        <title>SweetLife - Repas</title>
+
+        <link rel="stylesheet" href="../css/humeur.css" />
+        <link rel="stylesheet" href="../css/navbar.css" />
+        <link rel="stylesheet" href="../css/theme-initial.css" />
+        <link rel="stylesheet" href="../css/carte.css" />
+        <link rel="stylesheet" href="../css/filtre-repas.css" />
+        <link rel="stylesheet" href="../css/mise-en-page.css" />
+    </head>
+
+    <body>
+        <!-- FILTERS -->
+        <input type="radio" name="type" id="all" checked />
+        <input type="radio" name="type" id="entree" />
+        <input type="radio" name="type" id="plat-principale" />
+        <input type="radio" name="type" id="dessert-fruit" />
+        <input type="radio" name="type" id="snack" />
+
+        <header>
+            <nav class="navbar glass">
+                <img class="img" src="../image/logo.png" alt="logo SweetLife" />
+
+                <ul class="nav-links">
+                    <li><a href="index.html">🏠 Accueil</a></li>
+                    <li><a href="exercice.html">🧘 Exercices</a></li>
+                    <li><a href="repas.html" class="actif">🥗 Repas</a></li>
+                    <li><a href="historique.html">📊 Historique</a></li>
+                    <li><a href="Profil.html">👤 Profil</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- BOUTON INSCRIPTION FIXE EN HAUT À DROITE -->
+        <a class="btn-inscription-fixe" href="inscription.html">
+            <button class="btn-primary" type="button">s'inscrire</button>
+        </a>
+
+        <main>
+            <article class="mood-card glass-card">
+                <p>💫 État émotionnel actuel</p>
+
+                <section class="affichage-humeur">
+                    <span class="big-emoji" id="moodEmoji">😌</span>
+                    <h3>Calme & Sereine</h3>
+                </section>
+            </article>
+
+            <h1>🥗 Repas</h1>
+            <p class="sous-titre">Des repas adaptés à ton humeur.</p>
+
+            <section class="banniere">
+                <span>🌸</span>
+                <div>
+                    <h3>Repas recommandés</h3>
+                    <p>Des plats équilibrés pour ton bien-être.</p>
+                </div>
+            </section>
+
+            <!-- FILTER BUTTONS -->
+            <section class="filtres">
+                <label for="all">🌿 Tous</label>
+                <label for="entree">☀️ Entrée</label>
+                <label for="plat-principale">🌤 Plat principal</label>
+                <label for="dessert-fruit">🌙 Dessert / Fruit</label>
+                <label for="snack">🫐 Snack</label>
+            </section>
+
+            <!-- GRID -->
+            <section class="grille">
+                <article data-type="entree">
+                    <img
+                        src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?w=600"
+                    />
+
+                    <div class="contenu">
+                        <h2>Granola Soleil</h2>
+                        <p>Granola maison et fruits frais.</p>
+
+                        <div class="etiquettes">
+                            <span>☀️ Matin</span>
+                            <span>Vegan</span>
+                        </div>
+
+                        <div class="statistiques">
+                            <div><strong>320</strong><small>KCAL</small></div>
+                            <div><strong>12g</strong><small>PROT</small></div>
+                        </div>
+
+                        <button>Ajouter</button>
+                    </div>
+                </article>
+
+                <article data-type="plat-principale">
+                    <img
+                        src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600"
+                    />
+
+                    <div class="contenu">
+                        <h2>Salade Arc-en-Ciel</h2>
+                        <p>Riche en antioxydants.</p>
+
+                        <div class="etiquettes">
+                            <span>🌤 Déjeuner</span>
+                        </div>
+
+                        <div class="statistiques">
+                            <div><strong>280</strong><small>KCAL</small></div>
+                            <div><strong>9g</strong><small>PROT</small></div>
+                        </div>
+
+                        <button>Ajouter</button>
+                    </div>
+                </article>
+
+                <article data-type="dessert-fruit">
+                    <img
+                        src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600"
+                    />
+
+                    <div class="contenu">
+                        <h2>Soupe Curcuma</h2>
+                        <p>Apaisante et réconfortante.</p>
+
+                        <div class="etiquettes">
+                            <span>🌙 Dîner</span>
+                        </div>
+
+                        <div class="statistiques">
+                            <div><strong>210</strong><small>KCAL</small></div>
+                            <div><strong>5g</strong><small>PROT</small></div>
+                        </div>
+
+                        <button>Ajouter</button>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <script src="../js/animationCard.js"></script>
+        <script src="../js/filtre.js"></script>
+    </body>
+</html>

@@ -1,0 +1,106 @@
+/*   FILTRES DES REPAS   */
+
+/* Cache les boutons radio */
+input[type="radio"] {
+    display: none;
+}
+
+/* BOUTONS DES FILTRES */
+.filtres {
+    display: flex; /* met les boutons en ligne */
+    flex-wrap: wrap; /* retour à la ligne si besoin */
+    gap: 10px; /* espace entre boutons */
+    margin-bottom: 20px; /* espace dessous */
+}
+
+.filtres label {
+    padding: 10px 14px; /* espace intérieur */
+    border-radius: 25px; /* coins arrondis */
+
+    /* EFFET VERRE */
+    background: rgba(255, 255, 255, 0.15); /* fond transparent */
+    backdrop-filter: blur(10px); /* effet flou */
+    -webkit-backdrop-filter: blur(10px); /* compatibilité Safari */
+
+    border: 1px solid rgba(255, 255, 255, 0.3); /* bordure légère */
+    color: inherit; /* garde la couleur du texte */
+
+    cursor: pointer; /* curseur main */
+    transition: 0.3s; /* animation douce */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ombre légère */
+    font-size: 14px; /* taille du texte */
+}
+
+.filtres label:hover {
+    background: rgba(58, 138, 106, 0.35); /* fond vert au survol */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* bordure plus visible */
+    transform: translateY(-2px); /* monte légèrement */
+}
+
+/*   BOUTON ACTIF        */
+
+#all:checked ~ main label[for="all"],
+#entree:checked ~ main label[for="entree"],
+#plat-principale:checked ~ main label[for="plat-principale"],
+#dessert-fruit:checked ~ main label[for="dessert-fruit"],
+#snack:checked ~ main label[for="snack"] {
+    background: rgba(58, 138, 106, 0.6); /* fond vert */
+    color: white; /* texte blanc */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* bordure claire */
+    backdrop-filter: blur(12px); /* effet flou */
+}
+
+/*   FILTRAGE DES CARTES */
+
+/* Affiche toutes les cartes */
+#all:checked ~ main .grille article {
+    display: block;
+}
+
+/* Cache tout puis affiche seulement les entrées */
+#entree:checked ~ main .grille article {
+    display: none;
+}
+#entree:checked ~ main .grille [data-type="entree"] {
+    display: block;
+}
+
+/* Cache tout puis affiche seulement les plats principaux */
+#plat-principale:checked ~ main .grille article {
+    display: none;
+}
+#plat-principale:checked ~ main .grille [data-type="plat-principale"] {
+    display: block;
+}
+
+/* Cache tout puis affiche seulement les desserts/fruits */
+#dessert-fruit:checked ~ main .grille article {
+    display: none;
+}
+#dessert-fruit:checked ~ main .grille [data-type="dessert-fruit"] {
+    display: block;
+}
+
+/* Cache tout puis affiche seulement les snacks */
+#snack:checked ~ main .grille article {
+    display: none;
+}
+#snack:checked ~ main .grille [data-type="snack"] {
+    display: block;
+}
+
+/*   RESPONSIVE          */
+
+/* Tablette : 2 colonnes */
+@media (min-width: 768px) {
+    .grille {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Ordinateur : 3 colonnes */
+@media (min-width: 1024px) {
+    .grille {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SweetLife – Connexion</title>
+        <link rel="stylesheet" href="/vue/css/theme-initial.css" />
+        <link rel="stylesheet" href="/vue/css/theme-initial.css" />
+        <link rel="stylesheet" href="/vue/css/authentification.css" />
+    </head>
+
+    <body>
+        <!-- Éléments décoratifs flottants -->
+        <div class="flottant flottant-1"></div>
+        <div class="flottant flottant-2"></div>
+
+        <!-- Checkbox cachée pour menu burger -->
+        <input type="checkbox" id="menu-toggle" hidden />
+
+        <!-- MAIN -->
+        <main class="page-connexion">
+            <!-- FORMULAIRE (CARTE) -->
+            <section class="carte">
+                <!-- LOGO -->
+                <header class="logo-carte">
+                    <img
+                        src="/vue/image/logo.png"
+                        alt="logo du site SweetLife"
+                    />
+
+                    <h1>Sweet<span>life</span></h1>
+
+                    <span>Bon Retour 🌸</span>
+
+                    <p>Ton espace bien-être & émotions</p>
+                    <p>Connecte-toi à ton espace bien-être</p>
+                </header>
+
+                <!-- INFORMATIONS -->
+                <section class="carte-info">
+                    <p>Retrouve ton suivi émotionnel</p>
+                    <p>Accède à tes exercices personnalisés</p>
+                    <p>Continue ton voyage bien-être</p>
+                </section>
+
+                <!-- FORMULAIRE (CORRIGÉ) -->
+                <form
+                    class="champ"
+                    action="../../controller/connexionController.php"
+                    method="POST"
+                >
+                    <label for="email">Adresse e-mail</label>
+
+                    <input
+                        type="email"
+                        name="mail"
+                        placeholder="Email"
+                        required
+                    />
+
+                    <label for="password">Mot de passe</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="••••••••"
+                        required
+                    />
+
+                    <button type="submit" class="btn-envoyer">Connexion</button>
+                </form>
+
+                <!-- OPTIONS -->
+                <section class="options">
+                    <label class="souvenir-moi" for="remember">
+                        <input type="checkbox" id="remember" name="remember" />
+                        Se souvenir de moi
+                    </label>
+
+                    <a href="#" class="mot-passe-oublie">
+                        Mot de passe oublié ?
+                    </a>
+                </section>
+
+                <!-- INSCRIPTION -->
+                <p class="lien-sinscrire">
+                    Pas encore membre ?
+                    <a href="inscription.html"> Créer un compte </a>
+                </p>
+
+                <!-- RETOUR -->
+                <nav class="retour">
+                    <a href="index.html"> ← Retour à l'accueil </a>
+                </nav>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,449 @@
+/*   HISTORIQUE          */
+/*   VERSION MOBILE      */
+
+/* BASE MOBILE */
+
+.contenu-principal-hist {
+    padding: 100px 20px 80px; /* espace intérieur */
+    max-width: 900px; /* largeur maximale */
+    margin: auto; /* centre le contenu */
+    display: flex;
+    flex-direction: column;
+}
+
+/* EN-TÊTE */
+.en-tete-hist {
+    text-align: center; /* centre le texte */
+    margin-bottom: 30px; /* espace dessous */
+}
+
+.titre-hist {
+    font-family: "Cormorant Garamond", serif; /* police du titre */
+    font-size: 32px; /* taille du texte */
+    font-weight: 300; /* texte fin */
+    color: #1b4332; /* couleur verte foncée */
+    margin-bottom: 8px; /* espace dessous */
+}
+
+.sous-titre-hist {
+    color: #2f6f55; /* couleur verte */
+    font-size: 14px; /* taille du texte */
+}
+
+/*   FILTRES             */
+
+.filtres-hist {
+    padding: 16px; /* espace intérieur */
+    margin-bottom: 30px; /* espace dessous */
+}
+
+.ligne-filtres {
+    display: flex; /* éléments en ligne */
+    gap: 10px; /* espace entre éléments */
+    flex-wrap: wrap; /* retour à la ligne */
+    align-items: flex-start; /* aligne en haut */
+}
+
+/*   MENU DÉROULANT      */
+
+.enveloppe-menu-deroulant {
+    position: relative; /* base pour le menu */
+    flex: 1; /* prend l’espace disponible */
+    min-width: 140px; /* largeur minimale */
+}
+
+.btn-menu-deroulant {
+    width: 100%; /* pleine largeur */
+    display: flex; /* éléments en ligne */
+    align-items: center; /* centre verticalement */
+    gap: 8px; /* espace entre éléments */
+    padding: 10px 12px; /* espace intérieur */
+    border-radius: 14px; /* coins arrondis */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* bordure claire */
+    background: rgba(255, 255, 255, 0.3); /* fond transparent */
+    backdrop-filter: blur(10px); /* effet flou */
+    cursor: pointer; /* curseur main */
+    transition: all 0.25s ease; /* animation */
+    font-family: "DM Sans", sans-serif; /* police */
+    font-size: 13px; /* taille texte */
+    color: #1b4332; /* couleur verte */
+    text-align: left; /* texte à gauche */
+}
+
+.btn-menu-deroulant:hover {
+    background: rgba(255, 255, 255, 0.5); /* fond plus clair */
+    transform: translateY(-2px); /* monte légèrement */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* ombre */
+}
+
+.btn-menu-deroulant.actif {
+    background: rgba(58, 138, 106, 0.25); /* fond vert */
+    border-color: rgba(58, 138, 106, 0.5); /* bordure verte */
+    color: #0d4a30; /* texte foncé */
+}
+
+.icone-menu {
+    font-size: 16px; /* taille icône */
+    flex-shrink: 0; /* garde la taille */
+}
+
+.libelle-menu {
+    flex: 1; /* prend l’espace restant */
+    font-weight: 500; /* texte plus épais */
+}
+
+.fleche-menu {
+    font-size: 11px; /* petite flèche */
+    transition: transform 0.25s ease; /* animation */
+    color: #3a8a6a; /* couleur verte */
+    flex-shrink: 0;
+}
+
+/*   MENU DES MOIS       */
+
+.panneau-mois {
+    display: none; /* caché par défaut */
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    gap: 5px; /* espace entre boutons */
+    margin-top: 7px; /* espace au-dessus */
+    padding: 10px; /* espace intérieur */
+    border-radius: 14px; /* coins arrondis */
+    background: rgba(255, 255, 255, 0.4); /* fond transparent */
+    backdrop-filter: blur(12px); /* effet flou */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* bordure claire */
+    animation: fadeIn 0.2s ease; /* animation */
+}
+
+.panneau-mois.ouvert {
+    display: grid; /* affiche le menu */
+    width: fit-content; /* largeur adaptée */
+}
+
+/* ANIMATION D’APPARITION */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* invisible */
+        transform: translateY(-6px); /* un peu plus haut */
+    }
+    to {
+        opacity: 1; /* visible */
+        transform: translateY(0); /* position normale */
+    }
+}
+
+.btn-mois {
+    padding: 7px 4px; /* espace intérieur */
+    border-radius: 8px; /* coins arrondis */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* bordure claire */
+    background: rgba(255, 255, 255, 0.2); /* fond transparent */
+    cursor: pointer; /* curseur main */
+    font-family: "DM Sans", sans-serif; /* police */
+    font-size: 11px; /* petite taille */
+    color: #1b4332; /* couleur texte */
+    transition: all 0.2s ease; /* animation */
+    text-align: center; /* texte centré */
+}
+
+.btn-mois:hover {
+    background: rgba(58, 138, 106, 0.2); /* fond vert */
+    border-color: rgba(58, 138, 106, 0.4); /* bordure verte */
+    transform: scale(1.04); /* agrandit légèrement */
+}
+
+.btn-mois.actif {
+    background: #3a8a6a; /* fond vert */
+    color: white; /* texte blanc */
+    border-color: #2f7057; /* bordure foncée */
+    font-weight: 500; /* texte plus épais */
+}
+
+/*   TEXTE PÉRIODE       */
+
+.libelle-periode {
+    margin-top: 14px; /* espace au-dessus */
+    padding: 9px 14px; /* espace intérieur */
+    border-radius: 10px; /* coins arrondis */
+    background: rgba(255, 255, 255, 0.25); /* fond transparent */
+    border-left: 3px solid #3a8a6a; /* barre verte à gauche */
+    font-size: 13px; /* taille texte */
+    font-weight: 500; /* texte plus épais */
+    color: #1b4332; /* couleur texte */
+}
+
+/*   RÉSULTATS           */
+
+.resultats-hist {
+    min-height: 200px; /* hauteur minimale */
+}
+
+.etat-vide {
+    display: flex;
+    flex-direction: column; /* éléments en colonne */
+    align-items: center; /* centre horizontalement */
+    justify-content: center; /* centre verticalement */
+    gap: 12px; /* espace entre éléments */
+    padding: 60px 20px; /* espace intérieur */
+    text-align: center; /* texte centré */
+    color: #2f6f55; /* couleur verte */
+    font-size: 14px;
+}
+
+.icone-vide {
+    font-size: 44px; /* grande icône */
+    display: block;
+    opacity: 0.7; /* légèrement transparente */
+}
+
+/*   GRILLE DES CARTES   */
+
+.grille-cartes {
+    display: grid; /* active la grille */
+    grid-template-columns: 1fr; /* une colonne */
+    gap: 12px; /* espace entre cartes */
+    animation: slideUp 0.3s ease; /* animation */
+}
+
+/* ANIMATION DES CARTES */
+@keyframes slideUp {
+    from {
+        opacity: 0; /* invisible */
+        transform: translateY(16px); /* plus bas */
+    }
+    to {
+        opacity: 1; /* visible */
+        transform: translateY(0); /* position normale */
+    }
+}
+
+/*   CARTE ÉMOTION       */
+
+.carte-hist {
+    border-radius: 18px; /* coins arrondis */
+    padding: 16px; /* espace intérieur */
+    backdrop-filter: blur(12px); /* effet flou */
+    -webkit-backdrop-filter: blur(12px); /* Safari */
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease; /* animation */
+    position: relative;
+}
+
+.carte-hist:hover {
+    transform: translateY(-4px); /* monte légèrement */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* ombre */
+}
+
+.dessus-carte {
+    display: flex; /* éléments en ligne */
+    align-items: center; /* centre verticalement */
+    gap: 12px; /* espace */
+    margin-bottom: 8px; /* espace dessous */
+}
+
+.emoji-carte {
+    font-size: 30px; /* taille emoji */
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.info-carte {
+    display: flex;
+    flex-direction: column; /* texte en colonne */
+    gap: 2px;
+    flex: 1;
+}
+
+.emotion-carte {
+    font-weight: 600; /* texte épais */
+    font-size: 15px;
+    letter-spacing: 0.3px; /* espace lettres */
+}
+
+.heure-carte {
+    font-size: 11px; /* petite taille */
+    color: #5d7d72; /* couleur grise verte */
+    font-weight: 400;
+}
+
+.point-carte {
+    width: 9px; /* taille point */
+    height: 9px;
+    border-radius: 50%; /* rond */
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
+.note-carte {
+    font-size: 13px; /* taille texte */
+    color: #2d5045; /* couleur texte */
+    line-height: 1.6; /* espace lignes */
+    padding-left: 0;
+    margin: 0;
+}
+
+/*   TABLETTE 480px      */
+
+@media (min-width: 480px) {
+    .titre-hist {
+        font-size: 38px; /* titre plus grand */
+    }
+
+    .panneau-mois {
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+    }
+
+    .btn-menu-deroulant {
+        font-size: 14px;
+        padding: 12px 16px;
+    }
+
+    .note-carte {
+        padding-left: 42px; /* décale le texte */
+    }
+}
+
+/*   TABLETTE 768px      */
+
+@media (min-width: 768px) {
+    .contenu-principal-hist {
+        padding: 110px 30px 80px;
+    }
+
+    .titre-hist {
+        font-size: 42px;
+    }
+
+    .sous-titre-hist {
+        font-size: 15px;
+    }
+
+    .filtres-hist {
+        padding: 20px;
+    }
+
+    .panneau-mois {
+        grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+    }
+
+    .grille-cartes {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+        gap: 14px;
+    }
+
+    .emoji-carte {
+        font-size: 34px;
+    }
+
+    .note-carte {
+        padding-left: 46px;
+    }
+}
+
+/*   ORDINATEUR 900px    */
+
+@media (min-width: 900px) {
+    .contenu-principal-hist {
+        padding: 120px 40px 80px;
+    }
+
+    .ligne-filtres {
+        flex-wrap: nowrap; /* reste sur une ligne */
+    }
+
+    .grille-cartes {
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+    }
+
+    .emoji-carte {
+        font-size: 36px;
+    }
+
+    .emotion-carte {
+        font-size: 16px;
+    }
+
+    .note-carte {
+        font-size: 14px;
+        padding-left: 50px;
+    }
+}
+
+/*   COULEURS ÉMOTIONS   */
+
+/* JOIE */
+.hist-card--joie {
+    background: rgba(255, 200, 80, 0.25);
+    border: 1px solid rgba(255, 180, 60, 0.5);
+}
+.hist-card--joie .emotion-carte,
+.hist-card--joie .point-carte {
+    color: #ffb347;
+}
+.hist-card--joie .point-carte {
+    background: #ffb347;
+}
+
+/* CALME */
+.hist-card--calme {
+    background: rgba(90, 170, 138, 0.2);
+    border: 1px solid rgba(58, 138, 106, 0.4);
+}
+.hist-card--calme .emotion-carte,
+.hist-card--calme .point-carte {
+    color: #3a8a6a;
+}
+.hist-card--calme .point-carte {
+    background: #3a8a6a;
+}
+
+/* STRESS */
+.hist-card--stress {
+    background: rgba(80, 130, 255, 0.2);
+    border: 1px solid rgba(58, 134, 255, 0.4);
+}
+.hist-card--stress .emotion-carte,
+.hist-card--stress .point-carte {
+    color: #3a86ff;
+}
+.hist-card--stress .point-carte {
+    background: #3a86ff;
+}
+
+/* FATIGUE */
+.hist-card--fatigue {
+    background: rgba(170, 170, 170, 0.2);
+    border: 1px solid rgba(150, 150, 150, 0.4);
+}
+.hist-card--fatigue .emotion-carte,
+.hist-card--fatigue .point-carte {
+    color: #888;
+}
+.hist-card--fatigue .point-carte {
+    background: #aaaaaa;
+}
+
+/* TRISTESSE */
+.hist-card--tristesse {
+    background: rgba(112, 150, 184, 0.2);
+    border: 1px solid rgba(112, 150, 184, 0.4);
+}
+.hist-card--tristesse .emotion-carte,
+.hist-card--tristesse .point-carte {
+    color: #7096b8;
+}
+.hist-card--tristesse .point-carte {
+    background: #7096b8;
+}
+
+/* COLÈRE */
+.hist-card--colere {
+    background: rgba(178, 34, 34, 0.15);
+    border: 1px solid rgba(178, 34, 34, 0.35);
+}
+.hist-card--colere .emotion-carte,
+.hist-card--colere .point-carte {
+    color: #b22222;
+}
+.hist-card--colere .point-carte {
+    background: #b22222;
+}

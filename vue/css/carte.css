@@ -1,0 +1,212 @@
+/*   BASE DES CARTES     */
+
+article {
+    background: rgba(255, 255, 255, 0.3); /* fond transparent */
+    backdrop-filter: blur(15px); /* effet flou */
+    -webkit-backdrop-filter: blur(15px); /* compatibilité Safari */
+
+    border-radius: 20px; /* coins arrondis */
+    overflow: hidden; /* cache ce qui dépasse */
+
+    border: 1px solid rgba(255, 255, 255, 0.4); /* bordure légère */
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* ombre */
+
+    transition: all 0.3s ease; /* animation douce */
+    position: relative; /* position de base */
+}
+
+article:hover {
+    transform: translateY(-6px); /* monte légèrement */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15); /* ombre plus forte */
+}
+
+/*   TITRES ET TEXTES    */
+
+h2 {
+    color: #2f6f55; /* couleur verte */
+    font-size: 18px; /* taille du titre */
+    margin-bottom: 10px; /* espace dessous */
+}
+
+p {
+    color: #5d7d72; /* couleur du texte */
+    margin-bottom: 15px; /* espace dessous */
+}
+
+/*   TAGS                */
+
+.etiquettes {
+    display: flex; /* éléments en ligne */
+    flex-wrap: wrap; /* retour à la ligne si besoin */
+    gap: 8px; /* espace entre etiquettes */
+    margin-bottom: 15px; /* espace dessous */
+}
+
+.etiquettes span {
+    font-size: 12px; /* petite taille */
+    padding: 5px 10px; /* espace intérieur */
+    border-radius: 20px; /* forme arrondie */
+    background: rgba(255, 255, 255, 0.4); /* fond transparent */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* bordure légère */
+}
+
+/*   CARTE EXERCICE      */
+
+.grille-exercices {
+    display: grid; /* active la grille */
+    grid-template-columns: 1fr; /* une colonne */
+    gap: 15px; /* espace entre cartes */
+    padding: 10px; /* espace intérieur */
+}
+
+.carte-exercice {
+    max-width: 100%; /* largeur maximale */
+    overflow: hidden; /* cache ce qui dépasse */
+}
+
+.carte-exercice iframe {
+    width: 100%; /* prend toute la largeur */
+    height: 160px; /* hauteur de la vidéo */
+    border: none; /* enlève la bordure */
+    display: block; /* évite les espaces */
+}
+
+.contenu-exercice {
+    padding: 12px; /* espace intérieur */
+}
+
+.titre-exercice {
+    margin-bottom: 5px; /* espace dessous */
+}
+
+.texte-exercice {
+    margin: 0; /* enlève les marges */
+}
+
+/*   CARTE REPAS         */
+
+article img {
+    width: 100%; /* image pleine largeur */
+    height: 220px; /* hauteur fixe */
+    object-fit: cover; /* coupe l’image proprement */
+    display: block; /* évite les espaces */
+}
+
+div.contenu {
+    padding: 20px; /* espace intérieur */
+}
+
+.statistiques {
+    display: flex; /* éléments en ligne */
+    gap: 20px; /* espace entre statistiques */
+    padding-top: 15px; /* espace en haut */
+    margin-bottom: 15px; /* espace dessous */
+    border-top: 1px solid rgba(255, 255, 255, 0.5); /* ligne en haut */
+}
+
+.statistiques strong {
+    display: block; /* passe à la ligne */
+    font-size: 20px; /* taille du nombre */
+    color: #3a8a6a; /* couleur verte */
+}
+
+button {
+    width: 100%; /* pleine largeur */
+    padding: 12px; /* espace intérieur */
+    border: none; /* pas de bordure */
+    border-radius: 30px; /* coins arrondis */
+    background: #3a8a6a; /* fond vert */
+    color: white; /* texte blanc */
+    cursor: pointer; /* curseur main */
+    transition: 0.3s; /* animation douce */
+}
+
+button:hover {
+    background: #2f6f55; /* vert plus foncé */
+}
+
+section.grille {
+    display: grid; /* active la grille */
+    grid-template-columns: 1fr; /* une colonne */
+    gap: 20px; /* espace entre cartes */
+}
+
+/*   TABLETTE 600px      */
+
+@media (min-width: 600px) {
+    .grille-exercices {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    }
+
+    .carte-exercice iframe {
+        height: 170px; /* vidéo plus grande */
+    }
+
+    h2 {
+        font-size: 20px; /* titre plus grand */
+    }
+
+    article img {
+        height: 240px; /* image plus haute */
+    }
+
+    section.grille {
+        grid-template-columns: 1fr 1fr; /* 2 colonnes */
+    }
+}
+
+/*   ORDINATEUR 900px    */
+
+@media (min-width: 900px) {
+    .grille-exercices {
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+        justify-content: center; /* centre les cartes */
+    }
+
+    .carte-exercice {
+        max-width: 280px; /* largeur maximale */
+        margin: auto; /* centre la carte */
+    }
+
+    .carte-exercice iframe {
+        height: 180px; /* vidéo plus haute */
+    }
+
+    .contenu-exercice {
+        padding: 15px; /* plus d’espace */
+    }
+
+    h2 {
+        font-size: 22px; /* titre plus grand */
+    }
+
+    article img {
+        height: 260px; /* image plus haute */
+    }
+
+    div.contenu {
+        padding: 25px; /* plus d’espace */
+    }
+
+    section.grille {
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+    }
+}
+
+/*   PETIT ÉCRAN         */
+
+@media (max-width: 400px) {
+    div.contenu {
+        padding: 15px; /* moins d’espace */
+    }
+
+    h2 {
+        font-size: 20px; /* taille du titre */
+    }
+
+    .statistiques {
+        flex-direction: column; /* met les statistiques en colonne */
+        gap: 10px; /* espace entre statistiques */
+    }
+}

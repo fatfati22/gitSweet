@@ -1,0 +1,227 @@
+* {
+    font-family: "Cormorant Garamond", serif; /* Police du titre */
+}
+
+/*   CONTAINER PRINCIPAL  */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap");
+.oubli-container {
+    max-width: 900px; /* largeur maximale */
+    margin: auto; /* centre horizontalement */
+    padding: 20px; /* espace intérieur */
+}
+
+.oubli-card {
+    background: rgba(255, 255, 255, 0.2); /* fond semi-transparent */
+    padding: 40px; /* espace intérieur */
+    border-radius: 20px; /* coins arrondis */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* ombre légère */
+    text-align: center; /* texte centré */
+}
+
+/*   ICÔNE HEADER        */
+
+.oubli-icon {
+    font-size: 70px; /* taille de l'icône */
+    display: block;
+    margin-bottom: 15px; /* espace en dessous */
+}
+
+.oubli-title {
+    font-size: 45px; /* taille du titre */
+    color: #3a8a6a; /* couleur verte */
+    margin-bottom: 15px;
+}
+
+.oubli-subtitle {
+    color: #555; /* gris foncé */
+    font-size: 17px; /* taille texte */
+    line-height: 1.6; /* interligne */
+    margin-bottom: 40px;
+}
+
+/*   FORMULAIRE          */
+
+.form-group {
+    margin-bottom: 30px; /* espace sous chaque champ */
+    text-align: left; /* texte aligné à gauche */
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: bold; /* texte en gras */
+}
+
+/*   CHAMP HEURE          */
+
+.time-input-group {
+    display: flex; /* éléments en ligne */
+    gap: 10px; /* espace entre eux */
+    align-items: center; /* centré verticalement */
+}
+
+.time-input {
+    flex: 1; /* prend tout l'espace disponible */
+    padding: 15px;
+    border: 1px solid #ccc; /* bord gris clair */
+    border-radius: 10px; /* coins arrondis */
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.3); /* fond semi-transparent */
+    min-width: 200px; /* largeur minimale */
+}
+
+.time-icon {
+    background: #3a8a6a; /* fond vert */
+    color: white; /* texte blanc */
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+/*   SELECTION HUMEUR     */
+
+.mood-grid {
+    display: grid; /* grille */
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+    gap: 15px; /* espace entre cartes */
+}
+
+.mood-option {
+    background: rgba(255, 255, 255, 0.3); /* fond semi-transparent */
+    padding: 20px;
+    border-radius: 15px; /* coins arrondis */
+    text-align: center;
+    cursor: pointer; /* main au survol */
+    border: 2px solid transparent;
+    transition: 0.3s; /* animation douce */
+}
+
+.mood-option:hover {
+    background: #dff3ec; /* fond clair au survol */
+    border-color: #3a8a6a; /* contour vert */
+}
+
+.mood-option.selected {
+    background: #3a8a6a; /* fond vert si sélectionné */
+    color: white; /* texte blanc */
+}
+
+.mood-emoji {
+    font-size: 45px; /* emoji grand */
+    display: block;
+    margin-bottom: 10px;
+}
+
+.mood-label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/*   INPUT TEXTUEL       */
+
+.form-input {
+    width: 100%; /* prend toute la largeur */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3); /* fond semi-transparent */
+}
+
+/*   BOUTON PRINCIPAL     */
+
+.btn-primary {
+    width: 100%;
+    background: #3a8a6a; /* fond vert */
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s; /* animation douce */
+}
+
+.btn-primary:hover {
+    background: #2f7057; /* fonce au survol */
+}
+
+/*   MESSAGE INFO         */
+
+.info-message {
+    margin-top: 25px;
+    background: rgba(255, 255, 255, 0.3); /* fond semi-transparent */
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-message span {
+    font-size: 30px; /* icône plus grande */
+}
+
+/*   SECTION FOOTER       */
+
+.form-footer {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/*   LIEN RETOUR          */
+
+.back-link {
+    text-decoration: none; /* enlève le soulignement */
+    color: #3a8a6a; /* vert */
+    font-weight: bold;
+}
+
+/*   CARTE HUMEUR         */
+
+.mood-card {
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.3); /* fond semi-transparent */
+}
+
+/*   RESPONSIVE           */
+
+@media (max-width: 768px) {
+    .mood-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
+    }
+
+    .oubli-title {
+        font-size: 35px; /* titre plus petit */
+    }
+}
+
+@media (max-width: 500px) {
+    .mood-grid {
+        grid-template-columns: 1fr; /* 1 colonne sur petit écran */
+    }
+
+    .oubli-card {
+        padding: 20px; /* moins d'espace */
+    }
+
+    .time-input-group {
+        flex-direction: column; /* champs empilés */
+    }
+
+    .time-icon {
+        width: 100%; /* prend toute la largeur */
+        text-align: center; /* centre le contenu */
+    }
+
+    .oubli-title {
+        font-size: 28px; /* titre plus petit */
+    }
+}
