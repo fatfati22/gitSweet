@@ -3,14 +3,7 @@
 /** @var array $exercices */
 ?>
 
-<article class="mood-card glass-card">
-    <p>💫 État émotionnel actuel</p>
 
-    <section class="affichage-humeur">
-        <span class="big-emoji">😌</span>
-        <h3>Calme & Sereine</h3>
-    </section>
-</article>
 
 <section>
     <h1 class="titre">🧘 Exercices</h1>
