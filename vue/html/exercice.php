@@ -2,9 +2,7 @@
 
 /** @var array $exercices */
 ?>
-
-
-
+<?php include(__DIR__ . '/actuel.php'); ?>
 <section>
     <h1 class="titre">🧘 Exercices</h1>
     <p class="sous-titre">

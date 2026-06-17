@@ -40,15 +40,6 @@
 
     <?php include __DIR__ . '/../html/navbar.php'; ?>
 
-    <article class="mood-card glass-card">
-        <p>💫 État émotionnel actuel</p>
-        <section class="affichage-humeur">
-            <span class="big-emoji" id="moodEmoji">😌</span>
-            <h3 id="moodTitle">Calme &amp; Sereine</h3>
-        </section>
-    </article>
-
-
     <main<?= !empty($mainClass) ? ' class="' . htmlspecialchars($mainClass) . '"' : '' ?>>
         <?= $contenu ?? ''; ?>
         </main>
@@ -67,7 +58,6 @@
         <script src="/vue/js/theme.js"></script>
         <script src="/vue/js/animationCard.js"></script>
         <script src="/vue/js/filtre.js"></script>
-<script src="/vue/js/humeur.js"></script>
 </body>
 
 </html>

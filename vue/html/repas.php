@@ -8,14 +8,9 @@
 <input type="radio" name="type" id="dessert-fruit">
 <input type="radio" name="type" id="snack">
 
-<article class="mood-card glass-card">
-    <p>💫 État émotionnel actuel</p>
 
-    <section class="affichage-humeur">
-        <span class="big-emoji">😊</span>
-        <h3>Repas adaptés à ton humeur</h3>
-    </section>
-</article>
+<?php include(__DIR__ . '/actuel.php'); ?>
+
 
 <h1>🥗 Repas</h1>
 <p class="sous-titre couleur">
