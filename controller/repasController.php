@@ -1,13 +1,24 @@
 <?php
-if (!isset($_SESSION['user'])) {
-    header("Location: /index.php?route=connexion");
-    exit();
-}
 
-$pageTitle   = 'Repas';
-$mainClass   = '';
-$pageStyles  = ['humeur.css', 'carte.css', 'filtre-repas.css', 'mise-en-page.css'];
-$pageScripts = ['animationCard.js', 'filtre.js'];
+require_once __DIR__ . '/../model/traitrepas.php';
+
+$repas = getTousLesRepas();
+
+$pageTitle = 'Repas';
+
+$mainClass = '';
+
+$pageStyles = [
+    'humeur.css',
+    'carte.css',
+    'filtre-repas.css',
+    'mise-en-page.css'
+];
+
+$pageScripts = [
+    'animationCard.js',
+    'filtre.js'
+];
 
 ob_start();
 require_once __DIR__ . '/../vue/html/repas.php';
