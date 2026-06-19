@@ -45,17 +45,11 @@ switch ($route) {
         require_once __DIR__ . '/controller/noteController.php';
 
         break;
-case 'UserHumeur':
-    require_once __DIR__ . '/controller/userHumeurController.php';
-    break;
-    case 'humeur':
-    require_once __DIR__ . '/controller/humeurController.php';
-    break;
+
     case 'deconnexion':
         require_once __DIR__ . '/controller/deconnexion.php';
         break;
 
- 
     default:
         http_response_code(404);
         echo "<h1>404 – Page introuvable oooo</h1>";

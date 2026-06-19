@@ -16,8 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajouter'])) {
 
     if (!empty($description)) {
 
-        $id_humeur=(int)($_POST["id_humeur"] ?? 0);
-        $result = ajouterNote($description, $id_user, $id_humeur);
+        $result = ajouterNote($description, $id_user);
 
         if (!$result) {
             die("Erreur lors de l'enregistrement de la note.");

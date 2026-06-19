@@ -30,7 +30,6 @@
         <button
             method="POST"
             name="ajouter"
-            value="1"
             type="submit"
             class="bouton-enregistrer"
             id="btn-enregistrer">
