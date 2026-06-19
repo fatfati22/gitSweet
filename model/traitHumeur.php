@@ -6,7 +6,7 @@ function getHumeurs()
 {
     global $conn;
 
-    $sql = "SELECT id, icone, nom FROM humeur";
+    $sql = "SELECT * FROM humeur";
     $result = mysqli_query($conn, $sql);
 
     if (!$result) {
