@@ -1,8 +1,9 @@
 function applySavedTheme() {
-    const theme = localStorage.getItem("theme");
-    if (theme) {
-        document.body.className = theme;
-    }
+  const theme = localStorage.getItem('theme');
+  if (theme) document.body.className = theme;
 }
-
-document.addEventListener("DOMContentLoaded", applySavedTheme);
+function setTheme(theme){
+  document.body.className = theme;
+  localStorage.setItem('theme', theme);
+}
+document.addEventListener('DOMContentLoaded', applySavedTheme);

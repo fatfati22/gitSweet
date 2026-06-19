@@ -1,13 +1,13 @@
 <?php
 require_once __DIR__ . '/bdd-config.php';
 
-function ajouterNote($description, $id_user)
+function ajouterNote($description, $id_user, $id_humeur = null)
 {
     global $conn;
-    $sql = "INSERT INTO note (description, id_user) VALUES (?, ?)";
+    $sql = "INSERT INTO note (description, id_user, id_humeur) VALUES (?, ?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
     if (!$stmt) return false;
-    mysqli_stmt_bind_param($stmt, "si", $description, $id_user);
+    mysqli_stmt_bind_param($stmt, "sii", $description, $id_user, $id_humeur);
     $resultat = mysqli_stmt_execute($stmt);
 
     if (!$resultat) {
